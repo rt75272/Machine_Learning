@@ -7,6 +7,9 @@ import random
 # Builds up a linear regression model using random data points in order to 
 # demonstrate how to make basic predictions.
 #
+# Model Equation:
+#   y = mx + b 
+#
 # Usage:
 #   $ python linear_reg.py
 # -----------------------------------------------------------------------------
@@ -22,7 +25,7 @@ def main():
     # Generate and add random x,y data points.
     for i in range(n):
         x_value = random.randint(0,10)
-        y_value = random.randint(0,10)*i
+        y_value = random.randint(0,i+1)*i
         x.append(x_value)
         y.append(y_value)
 
@@ -47,7 +50,7 @@ def main():
     # Make and display a prediction with an x value of 5.
     predict_me = 5
     prediction = get_prediction(predict_me)
-    print(f"At", predict_me, "the prediction is", prediction)
+    print(f"At x = ", predict_me, "the prediction is", prediction)
 
     # Graph display.
     plt.show()
